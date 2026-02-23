@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <base target="_self">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tết Nguyên Đán - Nét Đẹp Văn Hóa Việt</title>
+    <meta name="description" content="Khám phá ý nghĩa và các hoạt động truyền thống trong ngày Tết cổ truyền Việt Nam">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#e11d48",  // Màu đỏ truyền thống
+                        secondary: "#f59e0b", // Màu vàng may mắn
+                        accent: "#10b981"    // Màu xanh hy vọng
+                    },
+                    fontFamily: {
+                        sans: ["Inter", "sans-serif"],
+                        heading: ["Be Vietnam Pro", "sans-serif"]
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;700&display=swap');
+        body {
+            background-image: url('https://picsum.photos/1600/900?random=10');
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
+        }
+        .overlay {
+            background-color: rgba(255, 255, 255, 0.9);
+        }
+    </style>
+</head>
+<body class="font-sans">
+    <div class="overlay min-h-screen">
+        <header class="bg-primary text-white shadow-lg">
+            <nav class="container mx-auto px-4 py-4">
+                <div class="flex justify-between items-center">
+                    <div class="text-2xl font-bold flex items-center">
+                        <i class="fas fa-dragon mr-2"></i>
+                        <span>Tết Việt</span>
+                    </div>
+                    <ul id="nav-list" class="hidden md:flex gap-6"></ul>
+                    <button class="md:hidden text-2xl">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </nav>
+        </header>
+
+        <main class="container mx-auto px-4 py-8">
+            <section class="text-center mb-16">
+                <h1 class="text-4xl md:text-5xl font-bold mb-4 text-primary">Chào Mừng Tết Nguyên Đán</h1>
+                <p class="text-xl max-w-3xl mx-auto">Tết cổ truyền - Nét đẹp văn hóa ngàn đời của dân tộc Việt Nam</p>
+                <div class="mt-8">
+                    <button class="bg-secondary hover:bg-yellow-600 text-white font-bold py-3 px-6 rounded-full text-lg transition-all">Khám Phá Ngay</button>
+                </div>
+            </section>
+
+            <section class="mb-16">
+                <h2 class="text-3xl font-bold mb-8 text-center text-primary">Truyền Thống Tết Việt</h2>
+                <div id="tradition-grid" class="grid grid-cols-1 md:grid-cols-3 gap-8"></div>
+            </section>
+
+            <section class="mb-16 bg-accent/10 p-8 rounded-xl">
+                <h2 class="text-3xl font-bold mb-8 text-center text-primary">Mâm Ngũ Quả</h2>
+                <div id="fruit-grid" class="grid grid-cols-2 md:grid-cols-5 gap-4"></div>
+            </section>
+
+            <section class="mb-16">
+                <h2 class="text-3xl font-bold mb-8 text-center text-primary">Lời Chúc Tết Hay</h2>
+                <div id="wishes-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"></div>
+            </section>
+        </main>
+
+        <footer class="bg-primary text-white py-12">
+            <div class="container mx-auto px-4">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div>
+                        <h3 class="text-xl font-bold mb-4">Về Tết Việt</h3>
+                        <p>Tết Nguyên Đán là dịp lễ quan trọng nhất trong năm của người Việt, mang ý nghĩa sum vầy và khởi đầu mới.</p>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold mb-4"></h3>
+                        <ul id="footer-links" class="space-y-2"></ul>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold mb-4">BY to 2 </h3>
+                        <div id="social-links" class="flex gap-4 text-2xl"></div>
+                    </div>
+                </div>
+                <div class="border-t border-white/20 mt-8 pt-8 text-center">
+                    <p> Tết Việt Nam. Giữ gìn nét đẹp truyền thống.</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+    
+    <script>
+        // Data layer
+        const navigationItems = [
+            { "label": "Trang Chủ", "href": "#home" },
+            { "label": "Truyền Thống", "href": "#traditions" },
+            { "label": "Mâm Ngũ Quả", "href": "#fruits" },
+            { "label": "Lời Chúc", "href": "#wishes" },
+            { "label": "Liên Hệ", "href": "#contact" }
+        ];
+
+        const traditions = [
+            { 
+                "title": "Tảo Mộ", 
+                "description": "Viếng mộ tổ tiên trước Tết để tỏ lòng thành kính", 
+                "icon": "fas fa-ribbon",
+                "img": "https://picsum.photos/400/300?random=11"
+            },
+            { 
+                "title": "Gói Bánh Chưng", 
+                "description": "Hoạt động gia đình ý nghĩa tạo nên hương vị Tết", 
+                "icon": "fas fa-utensils",
+                "img": "https://picsum.photos/400/300?random=12"
+            },
+            { 
+                "title": "Xông Đất", 
+                "description": "Người xông đất mang lại may mắn cho gia chủ", 
+                "icon": "fas fa-door-open",
+                "img": "https://picsum.photos/400/300?random=13"
+            }
+        ];
+
+        const fruits = [
+            { "name": "Mãng Cầu", "meaning": "Cầu chúc", "img": "https://picsum.photos/200?random=14" },
+            { "name": "Dừa", "meaning": "Vừa đủ", "img": "https://picsum.photos/200?random=15" },
+            { "name": "Đu Đủ", "meaning": "Đầy đủ", "img": "https://picsum.photos/200?random=16" },
+            { "name": "Xoài", "meaning": "Tiêu xài", "img": "https://picsum.photos/200?random=17" },
+            { "name": "Sung", "meaning": "Sung túc", "img": "https://picsum.photos/200?random=18" }
+        ];
+
+        const wishes = [
+            { "content": "An khang thịnh vượng, vạn sự như ý", "author": "Truyền thống" },
+            { "content": "Tấn tài tấn lộc, tấn bình an", "author": "Miền Bắc" },
+            { "content": "Lộc tới tấm tình, an khang trường thọ", "author": "Miền Trung" },
+            { "content": "Tiền vô như nước, sức khỏe có dư", "author": "Miền Nam" }
+        ];
+
+        // Reusable render functions
+        function renderNavItems(items) {
+            return items.map(item => `
+                <li>
+                    <a href="${item.href}" class="hover:text-secondary transition-colors">${item.label}</a>
+                </li>
+            `).join("");
+        }
+
+        function renderTraditions(items) {
+            return items.map(item => `
+                <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                    <img src="${item.img}" alt="${item.title}" class="w-full h-48 object-cover" loading="lazy">
+                    <div class="p-6">
+                        <div class="text-primary text-3xl mb-3"><i class="${item.icon}"></i></div>
+                        <h3 class="text-xl font-bold mb-2">${item.title}</h3>
+                        <p class="text-gray-600">${item.description}</p>
+                    </div>
+                </div>
+            `).join("");
+        }
+
+        function renderFruits(items) {
+            return items.map(item => `
+                <div class="text-center">
+                    <img src="${item.img}" alt="${item.name}" class="w-full h-32 object-contain mx-auto" loading="lazy">
+                    <h3 class="font-bold mt-2">${item.name}</h3>
+                    <p class="text-sm text-gray-600">${item.meaning}</p>
+                </div>
+            `).join("");
+        }
+
+        function renderWishes(items) {
+            return items.map(item => `
+                <div class="bg-white p-6 rounded-lg shadow-sm border-l-4 border-primary">
+                    <p class="italic mb-3">"${item.content}"</p>
+                    <p class="text-right text-sm text-gray-500">- ${item.author}</p>
+                </div>
+            `).join("");
+        }
+
+        function renderFooterLinks(items) {
+            return items.map(item => `
+                <li><a href="${item.href}" class="hover:text-secondary transition-colors">${item.label}</a></li>
+            `).join("");
+        }
+
+        function renderSocialLinks(items) {
+            return items.map(item => `
+                <a href="${item.href}" class="hover:text-secondary transition-colors"><i class="${item.icon}"></i></a>
+            `).join("");
+        }
+
+        // Initial rendering
+        document.getElementById("nav-list").innerHTML = renderNavItems(navigationItems);
+        document.getElementById("tradition-grid").innerHTML = renderTraditions(traditions);
+        document.getElementById("fruit-grid").innerHTML = renderFruits(fruits);
+        document.getElementById("wishes-grid").innerHTML = renderWishes(wishes);
+        document.getElementById("footer-links").innerHTML = renderFooterLinks(footerLinks);
+        document.getElementById("social-links").innerHTML = renderSocialLinks(socialLinks);
+
+        // Delegated event handling for navigation
+        document.addEventListener("click", function(event) {
+            const link = event.target.closest("a[href^='#']");
+            if (!link) return;
+            event.preventDefault();
+            const target = document.querySelector(link.getAttribute("href"));
+            if (target) target.scrollIntoView({ behavior: "smooth", block: "start" });
+        });
+
+        // Mobile menu toggle
+        const mobileMenuButton = document.querySelector("button.md\\:hidden");
+        const navList = document.getElementById("nav-list");
+        
+        mobileMenuButton.addEventListener("click", function() {
+            navList.classList.toggle("hidden");
+            navList.classList.toggle("flex");
+            navList.classList.toggle("flex-col");
+            navList.classList.toggle("absolute");
+            navList.classList.toggle("top-16");
+            navList.classList.toggle("right-4");
+            navList.classList.toggle("bg-primary");
+            navList.classList.toggle("p-4");
+            navList.classList.toggle("rounded-lg");
+            navList.classList.toggle("shadow-xl");
+        });
+    </script>
+</body>
+</html>
